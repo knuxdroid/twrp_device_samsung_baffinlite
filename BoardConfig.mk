@@ -13,7 +13,7 @@ TARGET_CPU_SMP := true
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 # Kernel Prebuilt
-TARGET_PREBUILT_KERNEL := device/samsung/baffinlite/kernel
+TARGET_KERNEL_CONFIG := twrp_baffinlite_defconfig
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/baffinlite/mkbootimg.mk
 BOARD_KERNEL_BASE := 0x81e00000
 BOARD_KERNEL_PAGESIZE := 4096
