@@ -1,0 +1,26 @@
+From a13aa04c8b856d7bf461d08489c36156dc61443b Mon Sep 17 00:00:00 2001
+From: Pawit Pornkitprasan <p.pawit@gmail.com>
+Date: Sun, 16 Nov 2014 14:36:25 +0700
+Subject: [PATCH] HACK: baffinlite: force SELinux permissive
+
+We can't do it from BoardConfig because bootloader overrides parameters
+
+Change-Id: I91b6fd904f98625fffd40f9877cfca77d79797c6
+---
+ init/init.c | 1 +
+ 1 file changed, 1 insertion(+)
+
+diff --git a/init/init.c b/init/init.c
+index 7a68e62..77a3c5a 100644
+--- a/init/init.c
++++ b/init/init.c
+@@ -919,6 +919,7 @@ static bool selinux_is_disabled(void)
+ 
+ static bool selinux_is_enforcing(void)
+ {
++    return false;
+ #ifdef ALLOW_DISABLE_SELINUX
+     char tmp[PROP_VALUE_MAX];
+ 
+-- 
+1.9.3 (Apple Git-50)
